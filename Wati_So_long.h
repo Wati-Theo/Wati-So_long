@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:42:37 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/21 14:44:48 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/04/22 18:59:10 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,16 @@ typedef struct s_map {
 	void	*mlx_win;
 	int		length;
 	int		height;
+	int		last_pos;
 	char	*map;
-	t_data	img;
+	t_data	img[8];
+	t_data	screen;
 }	t_map;
 
 void	wati_exit(char	*error);
 void	wati_parser(char *path, t_map *map);
-void	display(t_map *map);
+void	disp_map(t_map *map);
+void	load_img(t_map *map);
+void	test(t_map *map);
 
 #endif

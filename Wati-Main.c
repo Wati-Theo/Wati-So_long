@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/21 14:44:58 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/04/22 19:01:43 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ int	check_path(char *path)
 	return (1);
 }
 
+// int lol(void *ta_data)
+// {
+// 	t_map newata = (t_map)ta_data;
+	
+// }
+
 int	main(int argc, char *argv[])
 {
 	t_map	map;
@@ -41,6 +47,11 @@ int	main(int argc, char *argv[])
 	{
 		wati_exit("Arg_err");
 	}
+	map.last_pos = 'f';
+	map.mlx = mlx_init();
+	load_img(&map);
 	wati_parser(argv[1], &map);
-	display(&map);
+	// mlx_loop_hook();
+	// mlx_loop();
+	disp_map(&map);
 }
