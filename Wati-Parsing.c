@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:18:41 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/23 19:10:35 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/04/23 23:27:55 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ void	col_check(t_map *map)
 
 void	check_map(t_map	*map)
 {
+	int	nb_p;
+	int	nb_e;
+	int	i;
+	
+	nb_p = 0;
+	nb_e = 0;
+	i = 0;
+	while (i < map->length * map->height)
+	{
+		if (map->map[i] != 'C' && map->map[i] != 'E' && map->map[i] != 'P' 
+			&& map->map[i] != '1' && map->map[i] != '0')
+			wati_exit("Invalid_map_CEP", 0);
+		if (map->map[i] == 'C')
+			map->nb_boost++;
+		i++;
+	}
 	if (!ft_strchr(map->map, 'C') || !ft_strchr(map->map, 'E')
 		|| !ft_strchr(map->map, 'P'))
 		wati_exit("Invalid_map_CEP", 0);

@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/23 20:30:33 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/04/24 01:15:35 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ void	wati_exit(char	*error, int cas)
 	exit(EXIT_SUCCESS);
 }
 
+int	click_exit(t_map *map)
+{
+	(void)map;
+	exit(EXIT_SUCCESS);
+	return (0);
+}
+
 int	check_path(char *path)
 {
 	int	len;
@@ -36,16 +43,13 @@ int	check_path(char *path)
 	return (1);
 }
 
-// int lol(void *ta_data)
-// {
-// 	t_map newata = (t_map)ta_data;
-	
-// }
-
 int	main(int argc, char *argv[])
 {
 	t_map	map;
 
+	map.nb_boost = 0;
+	map.current_boost = 0;
+	map.nb_moves = 0;
 	(void)argv;
 	if (argc != 2 || check_path(argv[1]))
 	{
@@ -58,10 +62,11 @@ int	main(int argc, char *argv[])
 	map.mlx_win = mlx_new_window(map.mlx, map.length * 64, map.height * 64,
 			"./so_long");
 	map.screen.img = mlx_new_image(map.mlx, map.length * 64, map.height * 64);
-	map.screen.addr = mlx_get_data_addr(map.screen.img, &map.screen.bits_per_pixel,
-			&map.screen.line_length, &map.screen.endian);
+	map.screen.addr = mlx_get_data_addr(map.screen.img,
+			&map.screen.bits_per_pixel, &map.screen.line_length,
+			&map.screen.endian);
 	mlx_hook(map.mlx_win, 2, 0, &read_input, &map);
-	//mlx_loop_hook();
+	mlx_hook(map.mlx_win, 17, 0, &click_exit, &map);
 	disp_map(&map);
 	mlx_loop(map.mlx);
 }
