@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:30:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/22 19:01:06 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/04/23 19:04:21 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	load_img(t_map *map)
 			&map->img[7].line_length, &map->img[7].endian);
 }
 
-void	place_FlashMcqueen(t_map *map)
+void	place_FlashMcqueen(t_map *map, int i, int j)
 {
 	if (map->last_pos == 'l')
 		place_img(i * 64, j * 64, &map->img[6], &map->screen);
@@ -101,7 +101,7 @@ void	which_sprite(t_map *map, char c, int i, int j)
 	if (c == 'E')
 		place_img(i * 64, j * 64, &map->img[3], &map->screen);
 	if (c == 'P')
-		place_FlashMcqueen(map);
+		place_FlashMcqueen(map, i, j);
 }
 
 void	disp_map(t_map *map)
@@ -109,11 +109,6 @@ void	disp_map(t_map *map)
 	int	i;
 	int	j;
 
-	map->mlx_win = mlx_new_window(map->mlx, map->length * 64, map->height * 64,
-			"./so_long");
-	map->screen.img = mlx_new_image(map->mlx, map->length * 64, map->height * 64);
-	map->screen.addr = mlx_get_data_addr(map->screen.img, &map->screen.bits_per_pixel,
-			&map->screen.line_length, &map->screen.endian);
 	j = 0;
 	while (j < map->height)
 	{
@@ -127,5 +122,4 @@ void	disp_map(t_map *map)
 	}
 	//place_img(0, 0, &map->img[0], &map->screen);
 	mlx_put_image_to_window(map->mlx, map->mlx_win, map->screen.img, 0, 0);
-	mlx_loop(map->mlx);
 }
