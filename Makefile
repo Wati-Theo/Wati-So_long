@@ -34,6 +34,8 @@ clean:
 
 fclean: clean
 	${RM} ${NAME}
+	make fclean -C Wati-Libft
+	
 
 re: fclean all
 

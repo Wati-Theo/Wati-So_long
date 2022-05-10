@@ -6,11 +6,31 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/24 01:15:35 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/10 14:14:52 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wati_So_long.h"
+
+void	check_sprites(void)
+{
+	if (open("assets/0.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/1.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/C.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/E.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/P_down.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/P_left.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/P_right.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+	if (open("assets/P_up.xpm", O_RDONLY) < 0)
+		wati_exit("Image_load_problem", 0);
+}
 
 void	wati_exit(char	*error, int cas)
 {
@@ -50,6 +70,7 @@ int	main(int argc, char *argv[])
 	map.nb_boost = 0;
 	map.current_boost = 0;
 	map.nb_moves = 0;
+	check_sprites();
 	(void)argv;
 	if (argc != 2 || check_path(argv[1]))
 	{
