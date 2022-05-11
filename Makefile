@@ -1,7 +1,8 @@
 SRCFILES=	Wati-Main.c	\
 			Wati-Parsing.c	\
 			Wati-Display.c	\
-			Wati-FlashMcqueen.c
+			Wati-FlashMcqueen.c	\
+			Wati-Load_img.c
 
 HEADFILES= Wati_So_long.h Wati-Libft/libft.h mlx/mlx.h
 
