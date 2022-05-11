@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:42:37 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/11 18:44:09 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 19:04:28 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	disp_map(t_map *map);
 void	load_img(t_map *map);
 void	test(t_map *map);
 int		read_input(int keycode, t_map *map);
+void	init_smap(t_map	*map);
 
 #endif

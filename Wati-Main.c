@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/11 15:31:29 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 19:04:51 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,6 @@ int	check_path(char *path)
 			return (0);
 	wati_exit("Invalide_Map_Filename", 0);
 	return (1);
-}
-
-void	init_smap(t_map	*map)
-{
-	map->nb_boost = 0;
-	map->current_boost = 0;
-	map->nb_moves = 0;
-	map->nb_Player = 0;
-	map->last_pos = 'f';
 }
 
 int	main(int argc, char *argv[])

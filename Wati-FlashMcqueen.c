@@ -6,11 +6,20 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:07:33 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/24 00:59:24 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 19:04:20 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wati_So_long.h"
+
+void	init_smap(t_map	*map)
+{
+	map->nb_boost = 0;
+	map->current_boost = 0;
+	map->nb_moves = 0;
+	map->nb_Player = 0;
+	map->last_pos = 'f';
+}
 
 void	move(t_map *map, int start, int finish, int last_pos)
 {
