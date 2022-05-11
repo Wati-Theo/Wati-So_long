@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/11 15:13:09 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 15:31:29 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,26 @@ int	check_path(char *path)
 	return (1);
 }
 
+void	init_smap(t_map	*map)
+{
+	map->nb_boost = 0;
+	map->current_boost = 0;
+	map->nb_moves = 0;
+	map->nb_Player = 0;
+	map->last_pos = 'f';
+}
+
 int	main(int argc, char *argv[])
 {
 	t_map	map;
 
-	map.nb_boost = 0;
-	map.current_boost = 0;
-	map.nb_moves = 0;
-	map.nb_Player = 0;
-	check_sprites();
+	init_smap(&map);
 	(void)argv;
 	if (argc != 2 || check_path(argv[1]))
 	{
 		wati_exit("Arg_err", 0);
 	}
-	map.last_pos = 'f';
+	check_sprites();
 	map.mlx = mlx_init();
 	load_img(&map);
 	wati_parser(argv[1], &map);
