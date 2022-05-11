@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:42:37 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/23 23:50:29 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 14:52:28 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_map {
 	int 	current_boost;
 	int		nb_boost;
 	int		nb_moves;
+	int		nb_Player;
 	char	*map;
 	t_data	img[8];
 	t_data	screen;

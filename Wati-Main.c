@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:20 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/10 14:14:52 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 15:13:09 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	main(int argc, char *argv[])
 	map.nb_boost = 0;
 	map.current_boost = 0;
 	map.nb_moves = 0;
+	map.nb_Player = 0;
 	check_sprites();
 	(void)argv;
 	if (argc != 2 || check_path(argv[1]))

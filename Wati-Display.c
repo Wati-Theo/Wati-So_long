@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:30:53 by tschlege          #+#    #+#             */
-/*   Updated: 2022/04/23 19:04:21 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 15:13:39 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,5 @@ void	disp_map(t_map *map)
 		}
 		j++;
 	}
-	//place_img(0, 0, &map->img[0], &map->screen);
 	mlx_put_image_to_window(map->mlx, map->mlx_win, map->screen.img, 0, 0);
 }
