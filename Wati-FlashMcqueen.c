@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:07:33 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/11 19:04:20 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 19:06:33 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_smap(t_map	*map)
 	map->nb_boost = 0;
 	map->current_boost = 0;
 	map->nb_moves = 0;
-	map->nb_Player = 0;
+	map->nb_player = 0;
 	map->last_pos = 'f';
 }
 

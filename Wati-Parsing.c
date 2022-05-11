@@ -6,7 +6,7 @@
 /*   By: tschlege <tschlege@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:18:41 by tschlege          #+#    #+#             */
-/*   Updated: 2022/05/11 19:00:00 by tschlege         ###   ########lyon.fr   */
+/*   Updated: 2022/05/11 19:06:33 by tschlege         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void	check_map(t_map	*map)
 		if (map->map[i] == 'C')
 			map->nb_boost++;
 		if (map->map[i] == 'P')
-			map->nb_Player++;
+			map->nb_player++;
 		i++;
 	}
 	i = 0;
-	if (map->nb_Player > 1)
-		while (++i < map->nb_Player)
+	if (map->nb_player > 1)
+		while (++i < map->nb_player)
 			map->map[ft_strrchr(map->map, 'P') - map->map] = '0';
 	if (!ft_strchr(map->map, 'C') || !ft_strchr(map->map, 'E')
 		|| !ft_strchr(map->map, 'P'))
